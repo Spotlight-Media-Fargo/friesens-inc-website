@@ -16,6 +16,16 @@
 <style>
 body{margin:0;background:#ffffff}
 a{color:#282F66}a:hover{color:#1a1f47}
+.mobile-menu-toggle{display:none}
+@media (max-width: 760px){
+  .site-header{padding:16px 20px!important;position:relative}
+  .site-header__logo img{height:52px!important}
+  .mobile-menu-toggle{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;padding:0;border:1px solid rgba(255,255,255,.55);border-radius:8px;background:rgba(20,24,58,.55);color:#fff;cursor:pointer}
+  .primary-nav{display:none!important;position:absolute;z-index:20;top:calc(100% - 4px);left:20px;right:20px;flex-direction:column;align-items:stretch!important;gap:4px!important;padding:12px;background:#282F66;border:1px solid rgba(255,255,255,.24);border-radius:12px;box-shadow:0 18px 36px rgba(8,10,30,.35)}
+  .primary-nav.is-open{display:flex!important}
+  .primary-nav a{padding:12px 14px!important}
+  .primary-nav a:last-child{text-align:center;margin-top:4px}
+}
 </style>
 </helmet>
 
@@ -23,9 +33,10 @@ a{color:#282F66}a:hover{color:#1a1f47}
 
 <!-- HERO -->
 <section id="top" style="position: relative; overflow: hidden; background-color: #1a1f47; background-image: linear-gradient(100deg, rgba(20,24,58,0.82) 0%, rgba(20,24,58,0.5) 38%, rgba(20,24,58,0) 68%), radial-gradient(ellipse at 0% 0%, rgba(8,10,30,0.9) 0%, rgba(8,10,30,0) 40%), url('./assets/1eb6f1b08d95fac8ca7e5b9ccd2fb1bd.jpg'); background-size: cover; background-position: center; color: #ffffff">
-<header style="max-width: 1280px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<a href="#top" style="display: block"><img src="./assets/1e3516575b241b6e0405d7996ae8eb9e.png" alt="Friesen's — Since 1939" style="height: 68px; width: auto; display: block"></a>
-<nav aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 32px; font-size: 15px; font-weight: 600">
+<header class="site-header" style="max-width: 1280px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a class="site-header__logo" href="#top" style="display: block"><img src="./assets/1e3516575b241b6e0405d7996ae8eb9e.png" alt="Friesen's — Since 1939" style="height: 68px; width: auto; display: block"></a>
+<button class="mobile-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+<nav id="primary-navigation" class="primary-nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 32px; font-size: 15px; font-weight: 600">
 <a href="#solutions" style="color: #ffffff; text-decoration: none; padding: 12px 0">Solutions</a>
 <a href="#about" style="color: #ffffff; text-decoration: none; padding: 12px 0">About</a>
 <a href="#industries" style="color: #ffffff; text-decoration: none; padding: 12px 0">Industries</a>
@@ -266,6 +277,23 @@ a{color:#282F66}a:hover{color:#1a1f47}
 
 </div>
 </x-dc>
+<script>
+(() => {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.primary-nav');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+  });
+  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Open navigation menu');
+  }));
+})();
+</script>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
 class Component extends DCLogic {
 renderVals() {
