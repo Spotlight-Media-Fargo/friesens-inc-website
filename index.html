@@ -279,19 +279,23 @@ a{color:#282F66}a:hover{color:#1a1f47}
 </x-dc>
 <script>
 (() => {
-  const toggle = document.querySelector('.mobile-menu-toggle');
-  const menu = document.querySelector('.primary-nav');
-  if (!toggle || !menu) return;
-  toggle.addEventListener('click', () => {
+  document.addEventListener('click', (event) => {
+    const toggle = event.target.closest('.mobile-menu-toggle');
+    const menuLink = event.target.closest('.primary-nav a');
+    const menu = document.querySelector('.primary-nav');
+    if (!menu) return;
+    if (toggle) {
+      event.preventDefault();
     const isOpen = menu.classList.toggle('is-open');
     toggle.setAttribute('aria-expanded', String(isOpen));
     toggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    } else if (menuLink) {
+      menu.classList.remove('is-open');
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      menuToggle?.setAttribute('aria-expanded', 'false');
+      menuToggle?.setAttribute('aria-label', 'Open navigation menu');
+    }
   });
-  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-    menu.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation menu');
-  }));
 })();
 </script>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":7600}}'>
