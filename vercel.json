@@ -3,72 +3,72 @@
   "redirects": [
     {
       "source": "/contact-friesens",
-      "destination": "/#contact",
+      "destination": "/contact/",
       "permanent": true
     },
     {
       "source": "/contact-friesens/",
-      "destination": "/#contact",
+      "destination": "/contact/",
       "permanent": true
     },
     {
       "source": "/our-company",
-      "destination": "/#about",
+      "destination": "/about/",
       "permanent": true
     },
     {
       "source": "/our-company/",
-      "destination": "/#about",
+      "destination": "/about/",
       "permanent": true
     },
     {
       "source": "/solutions/solutions",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/solutions/solutions/",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/solutions/plastic-modular-conveyors",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/solutions/plastic-modular-conveyors/",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/solutions/bacon-systems",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/solutions/bacon-systems/",
-      "destination": "/#solutions",
+      "destination": "/solutions/",
       "permanent": true
     },
     {
       "source": "/industries/confectionary",
-      "destination": "/#industries",
+      "destination": "/industries/",
       "permanent": true
     },
     {
       "source": "/industries/confectionary/",
-      "destination": "/#industries",
+      "destination": "/industries/",
       "permanent": true
     },
     {
       "source": "/support",
-      "destination": "/#contact",
+      "destination": "/contact/",
       "permanent": true
     },
     {
       "source": "/support/",
-      "destination": "/#contact",
+      "destination": "/contact/",
       "permanent": true
     }
   ]
