@@ -1,0 +1,75 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/contact-friesens",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-friesens/",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/our-company",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/our-company/",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/solutions",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/solutions/",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/plastic-modular-conveyors",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/plastic-modular-conveyors/",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/bacon-systems",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/solutions/bacon-systems/",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/industries/confectionary",
+      "destination": "/#industries",
+      "permanent": true
+    },
+    {
+      "source": "/industries/confectionary/",
+      "destination": "/#industries",
+      "permanent": true
+    },
+    {
+      "source": "/support",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/support/",
+      "destination": "/#contact",
+      "permanent": true
+    }
+  ]
+}
